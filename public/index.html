@@ -33,8 +33,24 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <!-- GitHub Pages redirect script disabled - causing URL loops -->
-    <!-- The app should work normally within Shopify iframe without redirect -->
+    <!-- GitHub Pages redirect script for Shopify App Bridge navigation -->
+    <script type="text/javascript">
+      // Handle Shopify app navigation redirected from 404.html
+      (function() {
+        var search = window.location.search;
+
+        // Check if we have a redirect parameter from 404.html
+        var redirectParam = new URLSearchParams(search).get('redirect');
+        if (redirectParam) {
+          // Decode the redirect URL that 404.html preserved
+          var redirectUrl = decodeURIComponent(redirectParam);
+          console.log('Restoring route from 404 redirect:', redirectUrl);
+
+          // Replace current history entry with the original Shopify URL
+          window.history.replaceState(null, null, redirectUrl);
+        }
+      })();
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

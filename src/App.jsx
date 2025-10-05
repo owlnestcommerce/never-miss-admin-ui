@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useAppBridge, NavMenu } from '@shopify/app-bridge-react';
 import Home from './pages/Home';
 import ComingSoon from './pages/ComingSoon';
@@ -10,9 +10,17 @@ import RaiseQuery from './pages/RaiseQuery';
 import Reports from './pages/Reports';
 import { authenticatedPost } from './utils/api';
 
-function Root() {
-  const shopify = useAppBridge()
+function App() {
+  const navigate = useNavigate();
+  const shopify = useAppBridge();
+
   console.log('App.jsx - Shopify instance:', shopify);
+
+  const handleNavigation = (path, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigate(path);
+  };
 
   useEffect(() => {
     // Only run if shopify is properly initialized
@@ -53,12 +61,24 @@ function Root() {
   return (
     <>
       <NavMenu>
-        <a slot="nav-link" href="/">Home</a>
-        <a slot="nav-link" href="/coming-soon">Coming Soon</a>
-        <a slot="nav-link" href="/notify-me">Notify Me</a>
-        {/* <a slot="nav-link" href="/pre-order">Pre Order</a> */}
-        <a slot="nav-link" href="/reports">Reports</a>
-        {/* <a slot="nav-link" href="/raise-query">Raise a Query</a> */}
+        <a slot="nav-link" href="/" onClick={(e) => handleNavigation('/', e)}>
+          Home
+        </a>
+        <a slot="nav-link" href="/coming-soon" onClick={(e) => handleNavigation('/coming-soon', e)}>
+          Coming Soon
+        </a>
+        <a slot="nav-link" href="/notify-me" onClick={(e) => handleNavigation('/notify-me', e)}>
+          Notify Me
+        </a>
+        {/* <a slot="nav-link" href="/pre-order" onClick={(e) => handleNavigation('/pre-order', e)}>
+          Pre Order
+        </a> */}
+        <a slot="nav-link" href="/reports" onClick={(e) => handleNavigation('/reports', e)}>
+          Reports
+        </a>
+        {/* <a slot="nav-link" href="/raise-query" onClick={(e) => handleNavigation('/raise-query', e)}>
+          Raise a Query
+        </a> */}
       </NavMenu>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -73,4 +93,4 @@ function Root() {
   );
 }
 
-export default Root;
+export default App;
