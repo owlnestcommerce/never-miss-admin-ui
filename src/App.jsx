@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { useAppBridge, NavMenu } from '@shopify/app-bridge-react';
 import Home from './pages/Home';
 import ComingSoon from './pages/ComingSoon';
@@ -51,7 +51,7 @@ function Root() {
   }, []); // Remove shopify dependency to prevent multiple calls
 
   return (
-    <>
+    <BrowserRouter basename="/never-miss-admin-ui">
       <NavMenu>
         <a slot="nav-link" href="/">Home</a>
         <a slot="nav-link" href="/coming-soon">Coming Soon</a>
@@ -69,7 +69,7 @@ function Root() {
         <Route path="/reports" element={<Reports />} />
         <Route path="/raise-query" element={<RaiseQuery />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 
