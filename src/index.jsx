@@ -8,10 +8,15 @@ import App from './App';
 const host = new URLSearchParams(window.location.search).get('host');
 
 ReactDOM.render(
-  <AppProvider i18n={{}}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </AppProvider>,
+  // <AppBridgeProvider config = {{
+  //     apiKey: process.env.REACT_APP_SHOPIFY_API_KEY,
+  //     host: host,
+  //     forceRedirect: true,
+  //   }}>
+    <AppProvider i18n={{}}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+    </AppProvider>,
   document.getElementById('root')
 );
