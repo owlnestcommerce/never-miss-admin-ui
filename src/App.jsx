@@ -51,7 +51,7 @@ function Root() {
   }, []); // Remove shopify dependency to prevent multiple calls
 
   return (
-    <BrowserRouter basename="/never-miss-admin-ui">
+    <BrowserRouter>
       <NavMenu>
         <a slot="nav-link" href="/">Home</a>
         <a slot="nav-link" href="/coming-soon">Coming Soon</a>

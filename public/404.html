@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Never Miss Admin</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment,
-      // e.g., http://www.foo.tld/one/two?a=b&c=d#qwe, becomes
-      // http://www.foo.tld/?/one/two&a=b~and~c=d#qwe
-      // Note: this 404.html file must be at least 512 bytes for it to work
-      // with Internet Explorer (it is currently > 512 bytes)
-
-      // If you're creating a Project Pages site and NOT using a custom domain,
-      // then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).
-      // This way the code will only replace the route part and not the real repository name
-      var pathSegmentsToKeep = 1;
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-
-    </script>
-  </head>
-  <body>
-  </body>
+    <title>Never Miss Admin - Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #6c757d;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #6c757d;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #008060, #00a383);
+            border-radius: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <h1>Page Not Found</h1>
+        <p>This application should be accessed through the Shopify Admin interface.</p>
+        <p>If you arrived here by mistake, please contact support.</p>
+    </div>
+</body>
 </html>
