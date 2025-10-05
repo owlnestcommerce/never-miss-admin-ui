@@ -18,7 +18,7 @@ const Reports = () => {
     setIsLoading(true);
     try {
       const shopDomain = shopify.config.shop;
-      const response = await authenticatedFetch(shopify, `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/subscriptions?page=${page}&limit=10`);
+      const response = await authenticatedFetch(shopify, `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/subscriptions?page=${page}&limit=10`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -43,7 +43,7 @@ const Reports = () => {
 
       console.log('Downloading report with dates:', { startDate, endDate });
 
-      const response = await authenticatedPost(shopify, `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/report/notify-me/download`, {
+      const response = await authenticatedPost(shopify, `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/report/notify-me/download`, {
         start_date: startDate,
         end_date: endDate
       });

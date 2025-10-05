@@ -108,7 +108,7 @@ const ComingSoonSettings = () => {
       };
 
       console.log('API Call:', {
-        url: `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/config/coming_soon/${productId}`,
+        url: `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/config/coming_soon/${productId}`,
         method: 'PUT',
         shopDomain,
         productId,
@@ -116,7 +116,7 @@ const ComingSoonSettings = () => {
       });
 
       // Make authenticated API call to save coming soon settings
-      const response = await authenticatedPut(shopify, `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/config/coming_soon/${productId}`, {
+      const response = await authenticatedPut(shopify, `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/config/coming_soon/${productId}`, {
         start_date: startDate.toISOString().split('T')[0],
         start_time: startTime,
         end_date: endDate.toISOString().split('T')[0],

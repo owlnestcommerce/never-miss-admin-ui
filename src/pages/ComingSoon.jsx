@@ -21,7 +21,7 @@ const ComingSoon = () => {
     setIsRefreshing(true);
     try {
       console.log('Fetching existing coming soon configs for:', shopDomain);
-      const response = await authenticatedFetch(shopify, `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/config/coming_soon`);
+      const response = await authenticatedFetch(shopify, `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/config/coming_soon`);
 
       if (!response.ok) {
         // If no configs exist (404), it's not an error - just no data

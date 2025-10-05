@@ -33,7 +33,7 @@ function Root() {
         };
 
         // Make the authenticated API call
-        const response = await authenticatedPost(shopify, `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/init`, payload);
+        const response = await authenticatedPost(shopify, `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/init`, payload);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

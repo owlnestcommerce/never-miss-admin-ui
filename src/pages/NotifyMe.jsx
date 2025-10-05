@@ -68,7 +68,7 @@ const NotifyMe = () => {
       try {
         const shopDomain = shopify.config.shop;
 
-        const response = await authenticatedFetch(shopify, `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/config/sold_out`);
+        const response = await authenticatedFetch(shopify, `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/config/sold_out`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -118,7 +118,7 @@ const NotifyMe = () => {
         }
       };
 
-      const response = await authenticatedPut(shopify, `https://api.owlnestlabs.com/api/v1/never-miss/shopify/${shopDomain}/config/sold_out`, payload);
+      const response = await authenticatedPut(shopify, `https://api.owlnestlabs.in/api/v1/never-miss/shopify/${shopDomain}/config/sold_out`, payload);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
